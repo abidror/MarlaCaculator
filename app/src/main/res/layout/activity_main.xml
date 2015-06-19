@@ -85,6 +85,7 @@
         android:layout_toRightOf="@+id/textView2"
         android:layout_marginLeft="10dp"
         android:layout_toStartOf="@+id/btnConvert"
+        android:layout_toLeftOf="@+id/btnConvert"
         android:layout_alignRight="@+id/btnClear"
         android:layout_alignEnd="@+id/btnClear" />
 
