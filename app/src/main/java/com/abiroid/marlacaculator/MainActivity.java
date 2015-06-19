@@ -1,9 +1,11 @@
 package com.abiroid.marlacaculator;
 
+import android.content.ClipData;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.content.ClipboardManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,7 +17,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     EditText edInput, edResult;
-    Button btnConvert, btnClear, btnExit;
+    Button btnConvert, btnClear, btnExit, btnCopy;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         btnConvert = (Button)findViewById(R.id.btnConvert);
         btnClear = (Button)findViewById(R.id.btnClear);
         btnExit = (Button)findViewById(R.id.btnExit);
+        btnCopy = (Button)findViewById(R.id.btnCopy);
 
         btnConvert.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,6 +74,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnCopy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if( edResult.getText().length() > 0) {
+                    ClipboardManager clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+                    ClipData clip = ClipData.newPlainText("Marlas", edResult.getText().toString());
+                    clipboard.setPrimaryClip(clip);
+                }
+                else
+                {
+                    Toast.makeText(getApplicationContext(), "Nothing to copy", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
     }
 
     @Override
