@@ -48,7 +48,9 @@ public class MainActivity extends AppCompatActivity {
                 else
                 {
                     int sqFt = Integer.parseInt(edInput.getText().toString());
-                    int marlas = sqFt / 272;
+                    //int marlas = sqFt / 272;
+
+                    double marlas = sqFt / 272.5;
                     edResult.setText("" + marlas);
                     edResult.requestFocus();
                 }
