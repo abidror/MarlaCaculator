@@ -43,7 +43,8 @@ public class MainActivity extends AppCompatActivity {
 
                 if( edInput.getText().toString().equals(""))
                 {
-                    Toast.makeText(getApplicationContext(), "Please Provide Square Feets", Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getApplicationContext(), "Please Provide Square Feets", Toast.LENGTH_LONG).show();
+                    MyToast.display(MainActivity.this, "Please provide square feets");
                 }
                 else
                 {
@@ -87,7 +88,9 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else
                 {
-                    Toast.makeText(getApplicationContext(), "Nothing to copy", Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getApplicationContext(), "Nothing to copy", Toast.LENGTH_LONG).show();
+
+                    MyToast.display(MainActivity.this, "Nothing to copy");
                 }
             }
         });
