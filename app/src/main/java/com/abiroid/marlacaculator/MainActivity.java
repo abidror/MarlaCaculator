@@ -43,13 +43,11 @@ public class MainActivity extends AppCompatActivity {
 
                 if( edInput.getText().toString().equals(""))
                 {
-                    //Toast.makeText(getApplicationContext(), "Please Provide Square Feets", Toast.LENGTH_LONG).show();
                     MyToast.display(MainActivity.this, "Please provide square feets");
                 }
                 else
                 {
                     int sqFt = Integer.parseInt(edInput.getText().toString());
-                    //int marlas = sqFt / 272;
 
                     double marlas = sqFt / 272.5;
                     edResult.setText("" + marlas);
@@ -88,8 +86,6 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else
                 {
-                    //Toast.makeText(getApplicationContext(), "Nothing to copy", Toast.LENGTH_LONG).show();
-
                     MyToast.display(MainActivity.this, "Nothing to copy");
                 }
             }
