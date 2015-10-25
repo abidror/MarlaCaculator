@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
                 {
                     int sqFt = Integer.parseInt(edInput.getText().toString());
 
-                    double marlas = sqFt / 272.5;
+                    double marlas = sqFt / 272.251;
                     edResult.setText("" + marlas);
                     edResult.requestFocus();
                 }
